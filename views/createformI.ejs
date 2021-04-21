@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head  %>  
+  </head>
+  <body>
+    <div class ="container-fluid bg-3 text-center">
+      <h3><%= page %></h3>
+      <br>
+
+    <div class ="row">
+        <form action='/invoice/create' method='POST'>
+            <input type='text' name='Bill' placeholder="Bill" required>
+            <input type='text' name='NameOfProducts' placeholder="Name Of Products" required>
+            <input type='date' name='Date' placeholder="Date" required>
+            <input type='submit' value="Add invoice">
+        </form>
+    </div>
+  </div>
+  </body>
+
+  <% include partials/script %>
+</html>

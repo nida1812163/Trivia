@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head  %> 
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">    
+      <h3><%= page %></h3><br>
+      <div class="row">
+        <table class='table table-striped table-responsive-md btm-table'>
+          <thead>
+              <tr>
+                  <th>Part Name</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% Parts.forEach(function(Parts){ %>
+                  <tr>
+                      <td><%=Parts.PartName %></td>
+                    
+                      <td>
+                          <form action='supplierupdateform/<%=Supplier._id %>' method="POST">
+                              <button type="submit">Update</button>
+                          </form>
+                      </td>
+                      <td>
+                      <form action='<%=Supplier._id %>/delete' method="POST">
+                          <button type="submit">Delete</button>
+                      </form>
+                      </td>                   
+                </tr>
+              <% });  %>   
+        </tbody>
+      </table>
+      </div>
+    </div>
+    </body>
+    <% include partials/script %>
+    
+  
+</html>

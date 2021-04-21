@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+</head>
+<body>
+<% include partials/menu %>
+<div class="container-fluid bg-3 text-center">    
+  <h3><%= page %></h3><br>
+  <div class="row">
+    <form action='../<%=Parts._id %>/update' method='POST'>
+      <input type='text' name='PartName' placeholder="PartName" required value='<%=Parts.PartName %>'><br>
+      <input type="submit" value="Update Parts">
+    </form>
+  </div>
+</div>
+</body>
+<% include partials/script %>
+</html>

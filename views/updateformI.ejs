@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>  <!-- we are including partial views-->
+  </head>
+  <body>
+
+    <% include partials/afterlogin %>  <!--This is embedded javascript-->
+
+    <div class ="container-fluid bg-3 text-center">
+      <h3><%= page %></h3>
+      <br>
+
+    <div class ="row">
+        <form action='/invoice/<%=invoice._id %>/update' method='POST'>
+          <input type='text' name='_id' placeholder="_id" readonly value="<%=invoice._id %>"><br>
+            <input type='text' name='Bill' placeholder="Bill" required value="<%=invoice.Bill %>"></invoice> %>"><br>
+            <input type='text' name='NameOfProducts' placeholder="NameOfProducts" required value="<%=invoice.NameOfProducts %>"><br>
+            <input type='date' name='Date' placeholder="Date" required value="<%=invoice.Date %>"><br>
+            <input type='submit' value="Update Invoice">
+        </form>
+    </div>
+  </div>
+  </body>
+
+  <% include partials/script %>
+</html>

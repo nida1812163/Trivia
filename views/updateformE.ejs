@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>  <!-- we are including partial views-->
+  </head>
+  <body>
+
+    <% include partials/afterlogin %>  <!--This is embedded javascript-->
+
+    <div class ="container-fluid bg-3 text-center">
+      <h3><%= page %></h3>
+      <br>
+
+    <div class ="row">
+        <form action='/employee/<%=employee._id %>/update' method='POST'>
+          <input type='text' name='_id' placeholder="_id" readonly value="<%=employee._id %>"><br>
+            <input type='text' name='Name' placeholder="Name" required value="<%=employee.Name %>"><br>
+            <input type='text' name='contact' placeholder="contact" required value="<%=employee.contact %>"><br>
+            <input type='text' name='age' placeholder="age" required value="<%=employee.age %>"><br>
+            <input type='submit' value="Update Product">
+        </form>
+    </div>
+  </div>
+  </body>
+
+  <% include partials/script %>
+</html>

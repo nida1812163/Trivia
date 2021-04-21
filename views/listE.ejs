@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>  <!-- we are including partial views-->
+  </head>
+  <body>
+
+    <% include partials/menu %>
+
+    <div class ="container-fluid bg-3 text-center">
+      <h3><%= page %></h3>
+      <br>
+
+    <div class="row">
+      <table class = 'table table-striped table-responsive-md btm-table'>
+        <thead>
+            <tr>
+              <th>Name</th>
+              <th>contact</th>
+              <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+          <%for(var i=0; i<employee.length;i++){ %>  <!--products array is used, which was created form the list function in the controller when we accessed /list-->
+            <tr>
+              <td><%= employee[i].Name %></td>
+              <td><%= employee[i].contact %></td>
+              <td><%= employee[i].age %></td>
+            
+              <td>
+                <form action='updateformE/<%=employee[i]._id %>' method="POST">
+                  <button type= "submit">Update</button>
+                </form>
+              </td>
+              <td>
+                <form action='<%=employee[i]._id %>/delete' method="POST">
+                  <button type= "submit">Delete</button>
+                </form>
+              </td>
+            
+            </tr>
+        <% } %>
+      </tbody>
+    </table>
+     
+</div>
+</div>
+</body>
+<% include partials/script %>
+</html>

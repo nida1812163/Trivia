@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+</head>
+<body>
+<% include partials/menu %>
+<div class="container-fluid bg-3 text-center">    
+  <h3><%= page %></h3><br>
+  <div class="row">
+    <form action='../<%=Supplier._id %>/update' method='POST'>
+      <input type='text' name='Name' placeholder="Name" required value='<%=Supplier.Name %>'><br>
+      <input type="number" name='contact' placeholder="contact" required value='<%=Supplier.contact %>'><br>
+      <input type="text" name='address' placeholder="address" required value='<%=Supplier.address %>'><br>
+      <input type="submit" value="Update Supplier">
+    </form>
+  </div>
+</div>
+</body>
+<% include partials/script %>
+</html>

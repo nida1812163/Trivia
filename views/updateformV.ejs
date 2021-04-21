@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>  <!-- we are including partial views-->
+  </head>
+  <body>
+
+    <% include partials/afterlogin %>  <!--This is embedded javascript-->
+
+    <div class ="container-fluid bg-3 text-center">
+      <h3><%= page %></h3>
+      <br>
+
+    <div class ="row">
+        <form action='/vehicle/create' method='POST'>
+          <input type='text' name='_id' placeholder="_id" readonly value="<%=vehicle._id %>"><br>
+            <input type='text' name='vehicleName' placeholder="vehicleName" required>
+            <input type='number' name='number' placeholder="number" required>
+            <input type='submit' value="Add Vehicle">
+        </form>
+    </div>
+  </div>
+  </body>
+
+  <% include partials/script %>
+</html>

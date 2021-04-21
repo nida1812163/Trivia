@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head  %> 
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">    
+      <h3><%= page %></h3><br>
+      <div class="row">
+        <table class='table table-striped table-responsive-md btm-table'>
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Address</th>
+                  <th>&nbsp;</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% Supplier.forEach(function(Supplier){ %>
+                  <tr>
+                      <td><%=Supplier.Name %></td>
+                      <td><%=Supplier.contact %></td>
+                      <td><%=Supplier.address %></td>
+                      <td>
+                          <form action='supplierupdateform/<%=Supplier._id %>' method="POST">
+                              <button type="submit">Update</button>
+                          </form>
+                      </td>
+                      <td>
+                      <form action='<%=Supplier._id %>/delete' method="POST">
+                          <button type="submit">Delete</button>
+                      </form>
+                  </td>                   
+                  </tr>
+               <% });  %>   
+          </tbody>
+      </table>
+
+
+
+      </div>
+    </div>
+    </body>
+    <% include partials/script %>
+    
+  
+</html>
